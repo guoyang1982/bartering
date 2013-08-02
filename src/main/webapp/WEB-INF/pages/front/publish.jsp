@@ -15,6 +15,24 @@
         <script type="text/javascript" src="${contextPath}/js/json2.js"></script>
     
 	<script type="text/javascript" src="${contextPath}/swfupload/handlers.js" charset="gb2312"></script>
+	
+	<script language="JavaScript">
+	function secBoard(n)
+	  {
+	    for(i=0;i<secTable.cells.length;i++)
+	      secTable.cells
+
+	[i].className="sec11";
+	    secTable.cells[n].className="sec21";
+	    for(i=0;i<mainTable.tBodies.length;i++)
+	      mainTable.tBodies
+
+	[i].style.display="none";
+	    mainTable.tBodies
+
+	[n].style.display="block";
+	  }
+</script>
 	<script type="text/javascript">
 		var swfu;
 		var index=0;
@@ -243,23 +261,87 @@ publish
 
 
 
-                <tr>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td id="submiting">
-                        <input type="hidden" value="" name="yanbao_type">
-                        <input id="pub_submit" type="submit" class="btn-style2" value="注册后发布" gjalog="/wu_login_hint/login@atype=click">&nbsp;&nbsp;<input style="" type="submit" value="注册并置顶发布" class="btn-style1" id="sticky_submiting_btn">
-                    </td>
 
-                    
-                </tr>
 
             </tbody>
 </table>
             
-            
-            
+           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table border="0" width="220" cellpadding="0" style="border-collapse: collapse" height="22" id=secTable>
+<tr>
+<td class=sec21 onmouseover=secBoard(0) width="50%">
+<p >登陆</td>
+<td class=sec11 onmouseover=secBoard(1) width="50%">
+<p >注册</td>
+</tr>
+</table>
 
+
+
+<table id=mainTable border="0" width="195" cellpadding="0" style="border-collapse: collapse" height="115">
+
+<TBODY style="DISPLAY: block">
+<tr>
+<td height="145">
+
+<table border="0" width="205" cellpadding="0" style="border-collapse: collapse" height="138">
+
+
+<tr>
+<td height="23" width="195" colspan="2">
+           <div class="field reg-field">
+                <label for="username"><em  class="red-star">*</em>用户名：</label>
+                <input type="text" class="tab-input-text" name="login_username" value="">
+                <input type="hidden" value="http://bj.ganji.com/" name="next">
+                <input type="hidden" value="" name="second">
+            </div>
+            <div class="field reg-field">
+                <label for="password"><em  class="red-star">*</em>密码：</label>
+                <input type="password" class="tab-input-text" name="login_password" value="" autocomplete="off">
+                
+            </div>
+            
+            </td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</TBODY>
+
+<TBODY style="DISPLAY: none">
+<tr>
+<td height="145">
+<table border="0" width="205" cellpadding="0" style="border-collapse: collapse" height="138">
+<tr>
+<td height="138" width="195" style="line-height: 150%">
+
+                用户名：<input type="text" class="tab-input-text" name="username" value="">
+                
+密码： <input type="password" class="tab-input-text" name="password" value="" autocomplete="off">
+确认密码： <input type="password" class="tab-input-text" name="password2" value="" autocomplete="off">
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</TBODY>
+</table>
+            <table>
+                            <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    <td id="submiting">
+                        <input type="hidden" value="" name="yanbao_type">
+                        <input id="pub_submit" type="submit" class="btn-style2" value="立即发布" gjalog="/wu_login_hint/login@atype=click">
+                    </td>
+
+                    
+                </tr>
+</table>
     </form>
 </body>
 </html>
