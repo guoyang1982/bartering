@@ -140,7 +140,7 @@ public class PublishServiceImpl implements PublishService{
 		Users user = new Users();
 		
 		BeanUtils.copyProperties(userVO,user);
-
+		
 		usersDao.saveUser(user);
 		
 		return usersDao.getUser(user.getUser_name());

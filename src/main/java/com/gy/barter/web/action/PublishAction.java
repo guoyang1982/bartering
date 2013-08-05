@@ -86,7 +86,9 @@ public class PublishAction extends ActionSupport{
     	
     	Users user = null;
     	
-    	
+    	//设置成用户角色
+    	userVO.setRole_id(2);
+
     	if(dlORzc.equals("0")){
     		//为登陆  查询此user
     		
