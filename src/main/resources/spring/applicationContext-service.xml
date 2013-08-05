@@ -22,6 +22,14 @@
 	<bean id="cityDaoImpl" class="com.gy.barter.dao.impl.CityDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="thingsDao" class="com.gy.barter.dao.impl.ThingsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="usersDao" class="com.gy.barter.dao.impl.UsersDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
   
    <!-- <bean id="publishAction" class="com.gy.barter.web.action.PublishAction" /> -->

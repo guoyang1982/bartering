@@ -1,8 +1,10 @@
 package com.gy.barter.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +33,7 @@ public class Things {
 	
 	private String people_qq;
 
-	private Timestamp createTime;
+	private Date createTime;
 	
 	private Set<Pics> picList;
 
@@ -102,10 +104,10 @@ public class Things {
 	}
 	
 	@Column(name = "createTime")
-	public Timestamp getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
-	public void setCreateTime(Timestamp createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 	
@@ -113,7 +115,7 @@ public class Things {
 	/**@OneToMany(mappedBy="people")不可与@JoinColumn同时使用,使用mappedBy会在多的一端自动生成外键.
 	 * @JoinColumn(name="thing_id")指定多的一端的外键,在多的一端也必须这样设置,否则会生成多个外键.
 	 */
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="thing_id")
 	public Set<Pics> getPicList() {
 		return picList;

@@ -17,13 +17,37 @@
 	<script type="text/javascript" src="${contextPath}/swfupload/handlers.js" charset="gb2312"></script>
 	
 	<script language="JavaScript">
+	
 	function secBoard(n)
 	  {
 	    for(i=0;i<mainTable.tBodies.length;i++)
 	      mainTable.tBodies[i].style.display="none";
 	    mainTable.tBodies[n].style.display="block";
+	    
+	    $("#dlORzc").val(n);
+	    
+	   // document.getElementById("dl_name").value = "";
+	   // document.getElementById("display").value
+	   /// $("#dl_name").val("");
+
+	   // $("#dl_pass").val("");
+	    //document.getElementById("dl_pass").value = "";
+	    
+	   // $("#zc_name").val("");
+	   // document.getElementById("zc_name").value = "";
+
+
+	  //  $("#zc_pass").val("");
+	   // document.getElementById("zc_pass").value = "";
+
+	    
+	  //  $("#zc_dupPass").val("");
+	  //  document.getElementById("zc_dupPass").value = "";
+
 	  }
-</script>
+	
+	</script>
+
 	<script type="text/javascript">
 		var swfu;
 		var index=0;
@@ -137,6 +161,9 @@ publish
 <form name="form" action="toPublish.do" method="post">
 
 <input type="hidden" value="111" name="picsInfor" id="picsInfor">
+
+<input type="hidden" value="" name="dlORzc" id="dlORzc">
+
 
 <table cellspacing="0" cellpadding="0" border="0" width="980px;">
                 <tbody>
@@ -279,13 +306,13 @@ publish
 <tr>
 
             
-<td>用户名：</td><td> <input type="text" class="tab-input-text" name="userVO.user_name" value=""></td>
+<td>用户名：</td><td> <input type="text" class="tab-input-text" id="dl_name" name="userVO.user_nameD" value=""></td>
             
            
 </tr>
 
 <tr>
- <td>密码：</td><td> <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off"></td>
+ <td>密码：</td><td> <input type="password" class="tab-input-text" id="dl_pass" name="userVO.user_passpowderD" value="" autocomplete="off"></td>
 </tr>
 
 </table>
@@ -304,14 +331,14 @@ publish
                 用户名：
 </td>
 <td>                
-<input type="text" class="tab-input-text" name="userVO.user_name" value="">
+<input type="text" class="tab-input-text" id="zc_name" name="userVO.user_name" value="">
 </td>
 </tr>
 
 <tr>            
 <td>密码：</td>
 <td>
- <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
+ <input type="password" class="tab-input-text" id="zc_pass" name="userVO.user_passpowder" value="" autocomplete="off">
 </td>
 
 </tr>
@@ -322,7 +349,7 @@ publish
 
 </td>
 <td>
- <input type="password" class="tab-input-text" name="userVO.duplication_passpowder" value="" autocomplete="off">
+ <input type="password" class="tab-input-text" id="zc_dupPass" name="userVO.duplication_passpowder" value="" autocomplete="off">
 </td>
 </tr>
 </table>
@@ -347,6 +374,7 @@ publish
                     
        </tr>
 </table>
+
     </form>
     
 </div>    

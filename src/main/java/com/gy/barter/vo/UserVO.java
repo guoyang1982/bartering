@@ -10,10 +10,14 @@ public class UserVO {
 	
 	private String duplication_passpowder;
 	
+	private String user_nameD;
+	private String user_passpowderD;
+		
 	private String qq;
 	private String email;
 	private long role_id;
 	private String type;
+	
 	public long getId() {
 		return id;
 	}
@@ -73,6 +77,18 @@ public class UserVO {
 	}
 	public void setDuplication_passpowder(String duplication_passpowder) {
 		this.duplication_passpowder = duplication_passpowder;
+	}
+	public String getUser_nameD() {
+		return user_nameD;
+	}
+	public void setUser_nameD(String user_nameD) {
+		this.user_nameD = user_nameD;
+	}
+	public String getUser_passpowderD() {
+		return user_passpowderD;
+	}
+	public void setUser_passpowderD(String user_passpowderD) {
+		this.user_passpowderD = user_passpowderD;
 	}
 	
 	

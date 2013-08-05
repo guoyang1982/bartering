@@ -1,6 +1,7 @@
 package com.gy.barter.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Users {
 	private long role_id;
 	private String type;
 	
-	private Timestamp createTime;
+	private Date createTime;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -100,10 +101,10 @@ public class Users {
 	}
 	
 	@Column(name = "createTime")
-	public Timestamp getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
-	public void setCreateTime(Timestamp createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 

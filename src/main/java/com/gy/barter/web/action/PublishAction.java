@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.gy.barter.model.Citys;
+import com.gy.barter.model.Users;
 import com.gy.barter.service.PublishService;
 import com.gy.barter.vo.ThingsVO;
 import com.gy.barter.vo.UserVO;
@@ -38,6 +39,8 @@ public class PublishAction extends ActionSupport{
     private String district;
     
     private String street;
+    
+    private String dlORzc;
     
     private List<Citys> towCityList;
     
@@ -80,6 +83,24 @@ public class PublishAction extends ActionSupport{
     	System.out.println(street);
     	
     	System.out.println(images);
+    	
+    	Users user = null;
+    	
+    	
+    	if(dlORzc.equals("0")){
+    		//为登陆  查询此user
+    		
+    	}else if(dlORzc.equals("1")){
+    		//为注册
+    		
+    		user = publishService.saveUsers(userVO);
+    	}
+    	
+    	//插入things表  	
+    	publishService.saveThings(thingsVO,images,street,user.getId());
+    	
+
+    	
 
 
 
@@ -205,6 +226,14 @@ public class PublishAction extends ActionSupport{
 
 	public void setStreet(String street) {
 		this.street = street;
+	}
+
+	public String getDlORzc() {
+		return dlORzc;
+	}
+
+	public void setDlORzc(String dlORzc) {
+		this.dlORzc = dlORzc;
 	}
 	
 	
