@@ -19,18 +19,9 @@
 	<script language="JavaScript">
 	function secBoard(n)
 	  {
-	    for(i=0;i<secTable.cells.length;i++)
-	      secTable.cells
-
-	[i].className="sec11";
-	    secTable.cells[n].className="sec21";
 	    for(i=0;i<mainTable.tBodies.length;i++)
-	      mainTable.tBodies
-
-	[i].style.display="none";
-	    mainTable.tBodies
-
-	[n].style.display="block";
+	      mainTable.tBodies[i].style.display="none";
+	    mainTable.tBodies[n].style.display="block";
 	  }
 </script>
 	<script type="text/javascript">
@@ -142,6 +133,7 @@
 <body>
 publish
 
+<div align="center">
 <form name="form" action="toPublish.do" method="post">
 
 <input type="hidden" value="111" name="picsInfor" id="picsInfor">
@@ -259,20 +251,16 @@ publish
                 </tr>
 
 
-
-
-
-
             </tbody>
 </table>
-            
-           
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+<div style="position:absolute;left:214px;">
 <table border="0" width="220" cellpadding="0" style="border-collapse: collapse" height="22" id=secTable>
 <tr>
-<td class=sec21 onmouseover=secBoard(0) width="50%">
+<td class=sec21 onclick=secBoard(0) width="50%" style="cursor:pointer;">
 <p >登陆</td>
-<td class=sec11 onmouseover=secBoard(1) width="50%">
+<td class=sec11 onclick=secBoard(1) width="50%" style="cursor:pointer;">
 <p >注册</td>
 </tr>
 </table>
@@ -283,26 +271,21 @@ publish
 
 <TBODY style="DISPLAY: block">
 <tr>
-<td height="145">
+<td >
 
-<table border="0" width="205" cellpadding="0" style="border-collapse: collapse" height="138">
+<table border="0" width="300" cellpadding="0" >
 
 
 <tr>
-<td height="23" width="195" colspan="2">
-           <div class="field reg-field">
-                <label for="username"><em  class="red-star">*</em>用户名：</label>
-                <input type="text" class="tab-input-text" name="userVO.user_name" value="">
-                <input type="hidden" value="http://bj.ganji.com/" name="next">
-                <input type="hidden" value="" name="second">
-            </div>
-            <div class="field reg-field">
-                <label for="password"><em  class="red-star">*</em>密码：</label>
-                <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
-                
-            </div>
+
             
-            </td>
+<td>用户名：</td><td> <input type="text" class="tab-input-text" name="userVO.user_name" value=""></td>
+            
+           
+</tr>
+
+<tr>
+ <td>密码：</td><td> <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off"></td>
 </tr>
 
 </table>
@@ -313,35 +296,59 @@ publish
 
 <TBODY style="DISPLAY: none">
 <tr>
-<td height="145">
-<table border="0" width="205" cellpadding="0" style="border-collapse: collapse" height="138">
+<td >
+<table border="0" width="300" cellpadding="0">
 <tr>
-<td height="138" width="195" style="line-height: 150%">
+<td>
 
-                用户名：<input type="text" class="tab-input-text" name="userVO.user_name" value="">
-                
-密码： <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
-确认密码： <input type="password" class="tab-input-text" name="userVO.duplication_passpowder" value="" autocomplete="off">
+                用户名：
+</td>
+<td>                
+<input type="text" class="tab-input-text" name="userVO.user_name" value="">
+</td>
+</tr>
 
+<tr>            
+<td>密码：</td>
+<td>
+ <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
+</td>
+
+</tr>
+
+<tr>
+<td>
+确认密码：
+
+</td>
+<td>
+ <input type="password" class="tab-input-text" name="userVO.duplication_passpowder" value="" autocomplete="off">
 </td>
 </tr>
 </table>
+
 </td>
 </tr>
 </TBODY>
+
 </table>
-            <table>
-                            <tr>
-                    <td>&nbsp;</td>
-                    <td></td>
-                    <td id="submiting">
-                        <input type="hidden" value="" name="yanbao_type">
-                        <input id="pub_submit" type="submit" class="btn-style2" value="立即发布" >
-                    </td>
+
+        
+
+<table >
+       <tr>
+<td width="150">
+
+</td>
+          <td >
+            <input id="pub_submit" type="submit"  value="立即发布" >
+          </td>
 
                     
-                </tr>
+       </tr>
 </table>
     </form>
+    
+</div>    
 </body>
 </html>
