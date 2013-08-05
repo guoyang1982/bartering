@@ -24,6 +24,12 @@ public class Things {
 	private String condition;
 	private long city_id;
 	private long user_id;
+	
+	private String people_name;
+	
+	private String people_tel;
+	
+	private String people_qq;
 
 	private Timestamp createTime;
 	
@@ -115,6 +121,33 @@ public class Things {
 	public void setPicList(Set<Pics> picList) {
 		this.picList = picList;
 	}
+	
+	
+	@Column(name = "people_name")
+	public String getPeople_name() {
+		return people_name;
+	}
+	public void setPeople_name(String people_name) {
+		this.people_name = people_name;
+	}
+	
+	
+	@Column(name = "people_tel")
+	public String getPeople_tel() {
+		return people_tel;
+	}
+	public void setPeople_tel(String people_tel) {
+		this.people_tel = people_tel;
+	}
+	
+	@Column(name = "people_qq")
+	public String getPeople_qq() {
+		return people_qq;
+	}
+	public void setPeople_qq(String people_qq) {
+		this.people_qq = people_qq;
+	}
+	
 	
 	
 }

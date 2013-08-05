@@ -19,6 +19,8 @@ import org.springframework.stereotype.Controller;
 
 import com.gy.barter.model.Citys;
 import com.gy.barter.service.PublishService;
+import com.gy.barter.vo.ThingsVO;
+import com.gy.barter.vo.UserVO;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Controller("publishAction")
@@ -26,6 +28,16 @@ public class PublishAction extends ActionSupport{
 
     @Autowired
     private PublishService publishService;
+    
+    private ThingsVO thingsVO;
+    
+    private UserVO userVO;
+    
+    private String images;
+    
+    private String district;
+    
+    private String street;
     
     private List<Citys> towCityList;
     
@@ -52,6 +64,25 @@ public class PublishAction extends ActionSupport{
     	//session.setAttribute("gy","asdfasdfasdf");
     	
     	//session.setAttribute("towCityList",towCityList);
+
+		return SUCCESS;
+	}
+    
+    public String toPublish() {
+    	//message = " guoyang hellow";
+
+    	System.out.println(thingsVO.getHave());
+    	
+    	System.out.println(userVO.getUser_name());
+    	
+    	System.out.println(district);
+    	
+    	System.out.println(street);
+    	
+    	System.out.println(images);
+
+
+
 
 		return SUCCESS;
 	}
@@ -135,5 +166,47 @@ public class PublishAction extends ActionSupport{
 	public void setJsonCity(String jsonCity) {
 		this.jsonCity = jsonCity;
 	}
+
+	public ThingsVO getThingsVO() {
+		return thingsVO;
+	}
+
+	public void setThingsVO(ThingsVO thingsVO) {
+		this.thingsVO = thingsVO;
+	}
+
+	public UserVO getUserVO() {
+		return userVO;
+	}
+
+	public void setUserVO(UserVO userVO) {
+		this.userVO = userVO;
+	}
+
+	public String getImages() {
+		return images;
+	}
+
+	public void setImages(String images) {
+		this.images = images;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	
     
 }

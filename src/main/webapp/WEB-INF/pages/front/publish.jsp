@@ -142,7 +142,7 @@
 <body>
 publish
 
-<form name="form" runat="server">
+<form name="form" action="toPublish.do" method="post">
 
 <input type="hidden" value="111" name="picsInfor" id="picsInfor">
 
@@ -153,7 +153,7 @@ publish
                     <td><i> * </i></td>
                     <td>我有</td>
                     <td>
-                    <input value="" name="my_res" type="text" id="id_my_res" class="input1" maxlength="20" size="45">
+                    <input value="" name="thingsVO.have" type="text"  class="input1" maxlength="20" size="45">
 
                     </td>
                 </tr>
@@ -161,7 +161,7 @@ publish
                     <td><i> * </i></td>
                     <td>想换</td>
                     <td>
-                    <input value="" name="yours_res" type="text" class="input1" maxlength="8" size="20">
+                    <input value="" name="thingsVO.want" type="text" class="input1" maxlength="8" size="20">
                     </td>
                 </tr>
 
@@ -169,7 +169,7 @@ publish
                     <td><i> * </i></td>
                     <td>价格</td>
                     <td>
-                       <input value="" name="price" type="text" id="id_price" size="4" maxlength="6" class="input2">
+                       <input value="" name="thingsVO.price" type="text" id="id_price" size="4" maxlength="6" class="input2">
                       &nbsp;元
                     </td>
                 </tr>
@@ -181,7 +181,7 @@ publish
                         <table cellspacing="0" cellpadding="0" border="0" class="normal">
                             <tbody><tr>
                                  <td>
-                                      <textarea name="description" type="textarea" id="id_description" class="textarea1" rows="6" autocomplete="off"></textarea>
+                                      <textarea name="thingsVO.des" type="textarea" id="id_description" class="textarea1" rows="6" autocomplete="off"></textarea>
                                  </td>
                             </tr>
                         </tbody>
@@ -238,14 +238,14 @@ publish
                     <td><i> * </i></td>
                     <td>联系电话</td>
                     <td width="88%">
-                        <input value="" name="phone" type="text" id="id_phone" size="20" class="input1" maxlength="30">
+                        <input value="" name="thingsVO.people_tel" type="text" id="id_phone" size="20" class="input1" maxlength="30">
                         <span class="tips_wrap"><span id="tip_span_phone"></span></span></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>QQ号</td>
                     <td width="88%">
-                        <input value="" name="im" type="text" size="20" class="input1" maxlength="30">
+                        <input value="" name="thingsVO.people_qq" type="text" size="20" class="input1" maxlength="30">
                         <span class="tips_wrap"><span id="tip_span_im"></span></span></td>
                 </tr>
 
@@ -253,7 +253,7 @@ publish
                 <tr>
                     <td><i> * </i></td>
                     <td>联系人</td>
-                    <td><input value="" name="person" type="text" size="20" class="input1" maxlength="6">
+                    <td><input value="" name="thingsVO.people_name" type="text" size="20" class="input1" maxlength="6">
                     <span id="tip_span_person"></span>
                     </td>
                 </tr>
@@ -292,13 +292,13 @@ publish
 <td height="23" width="195" colspan="2">
            <div class="field reg-field">
                 <label for="username"><em  class="red-star">*</em>用户名：</label>
-                <input type="text" class="tab-input-text" name="login_username" value="">
+                <input type="text" class="tab-input-text" name="userVO.user_name" value="">
                 <input type="hidden" value="http://bj.ganji.com/" name="next">
                 <input type="hidden" value="" name="second">
             </div>
             <div class="field reg-field">
                 <label for="password"><em  class="red-star">*</em>密码：</label>
-                <input type="password" class="tab-input-text" name="login_password" value="" autocomplete="off">
+                <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
                 
             </div>
             
@@ -318,10 +318,10 @@ publish
 <tr>
 <td height="138" width="195" style="line-height: 150%">
 
-                用户名：<input type="text" class="tab-input-text" name="username" value="">
+                用户名：<input type="text" class="tab-input-text" name="userVO.user_name" value="">
                 
-密码： <input type="password" class="tab-input-text" name="password" value="" autocomplete="off">
-确认密码： <input type="password" class="tab-input-text" name="password2" value="" autocomplete="off">
+密码： <input type="password" class="tab-input-text" name="userVO.user_passpowder" value="" autocomplete="off">
+确认密码： <input type="password" class="tab-input-text" name="userVO.duplication_passpowder" value="" autocomplete="off">
 
 </td>
 </tr>
@@ -336,7 +336,7 @@ publish
                     <td></td>
                     <td id="submiting">
                         <input type="hidden" value="" name="yanbao_type">
-                        <input id="pub_submit" type="submit" class="btn-style2" value="立即发布" gjalog="/wu_login_hint/login@atype=click">
+                        <input id="pub_submit" type="submit" class="btn-style2" value="立即发布" >
                     </td>
 
                     
