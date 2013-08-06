@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2013-08-02 15:43:49
+Date: 2013-08-06 17:15:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -84,11 +84,20 @@ CREATE TABLE `barter_pic` (
   PRIMARY KEY (`id`),
   KEY `FK9F7100F98CF408A7` (`thing_id`),
   CONSTRAINT `FK9F7100F98CF408A7` FOREIGN KEY (`thing_id`) REFERENCES `barter_things` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of barter_pic
 -- ----------------------------
+INSERT INTO `barter_pic` VALUES ('1', 'false', 'Chrysanthemum.jpg', '4');
+INSERT INTO `barter_pic` VALUES ('2', 'false', 'Hydrangeas.jpg', '4');
+INSERT INTO `barter_pic` VALUES ('3', 'true', 'aaa.jpg', '4');
+INSERT INTO `barter_pic` VALUES ('4', 'true', 'Lighthouse.jpg', '5');
+INSERT INTO `barter_pic` VALUES ('5', 'false', 'Tulips.jpg', '5');
+INSERT INTO `barter_pic` VALUES ('6', 'false', 'Penguins.jpg', '5');
+INSERT INTO `barter_pic` VALUES ('7', 'true', 'aaa.jpg', '6');
+INSERT INTO `barter_pic` VALUES ('8', 'true', 'aaa.jpg', '7');
+INSERT INTO `barter_pic` VALUES ('9', 'true', 'aaa.jpg', '8');
 
 -- ----------------------------
 -- Table structure for `barter_role`
@@ -118,12 +127,23 @@ CREATE TABLE `barter_things` (
   `price` varchar(255) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL,
   `t_want` varchar(255) DEFAULT NULL,
+  `people_name` varchar(120) DEFAULT NULL,
+  `people_tel` varchar(120) DEFAULT NULL,
+  `people_qq` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of barter_things
 -- ----------------------------
+INSERT INTO `barter_things` VALUES ('1', '0', null, null, '123', '笔记本', '1222', '0', '电脑', '23', '123', '12');
+INSERT INTO `barter_things` VALUES ('2', '0', null, null, '123', '笔记本', '1222', '0', '电脑', '23', '123', '12');
+INSERT INTO `barter_things` VALUES ('3', '0', null, null, '123123', '过广告', '123', '0', '阿尔瓦发', '郭阳', '132', '123');
+INSERT INTO `barter_things` VALUES ('4', '0', null, null, '阿道夫', '撒地方', '123', '0', '阿斯蒂芬', '321', '123', '123');
+INSERT INTO `barter_things` VALUES ('5', '24', null, '2013-08-05 18:50:49', '啊沙发', '撒地方', '123213', '7', '撒地方', '郭阳', '123', '123');
+INSERT INTO `barter_things` VALUES ('6', '24', null, '2013-08-06 11:21:20', '爱的色放', '汽车', '123456', '7', '钱', '郭阳', '13671255430', '5264332');
+INSERT INTO `barter_things` VALUES ('7', '24', null, '2013-08-06 15:20:11', '爱的色放', '汽车', '123456', '7', '钱', '郭阳', '13671255430', '5264332');
+INSERT INTO `barter_things` VALUES ('8', '24', null, '2013-08-06 15:20:16', '爱的色放', '汽车', '123456', '7', '钱', '郭阳', '13671255430', '5264332');
 
 -- ----------------------------
 -- Table structure for `barter_user`
@@ -141,8 +161,17 @@ CREATE TABLE `barter_user` (
   `user_name` varchar(255) DEFAULT NULL,
   `user_passpowder` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of barter_user
 -- ----------------------------
+INSERT INTO `barter_user` VALUES ('1', null, null, null, null, '0', null, null, ', guoyag', ', 123');
+INSERT INTO `barter_user` VALUES ('2', null, null, null, null, '0', null, null, ', gy', ', `132');
+INSERT INTO `barter_user` VALUES ('3', null, null, null, null, '0', null, null, ', gy', ', `132');
+INSERT INTO `barter_user` VALUES ('4', null, null, null, null, '0', null, null, ', guoyang', ', 123');
+INSERT INTO `barter_user` VALUES ('5', null, null, null, null, '0', null, null, ', guoyang', ', 123');
+INSERT INTO `barter_user` VALUES ('6', null, null, null, null, '0', null, null, ', guoyang', ', 2');
+INSERT INTO `barter_user` VALUES ('7', null, null, null, null, '0', null, null, 'guoyang', '123');
+INSERT INTO `barter_user` VALUES ('8', null, null, null, null, '0', null, null, 'guoyang', '123');
+INSERT INTO `barter_user` VALUES ('9', null, null, null, null, '0', null, null, 'guoyang', '123');
