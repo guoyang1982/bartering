@@ -25,24 +25,6 @@
 	    mainTable.tBodies[n].style.display="block";
 	    
 	    $("#dlORzc").val(n);
-	    
-	   // document.getElementById("dl_name").value = "";
-	   // document.getElementById("display").value
-	   /// $("#dl_name").val("");
-
-	   // $("#dl_pass").val("");
-	    //document.getElementById("dl_pass").value = "";
-	    
-	   // $("#zc_name").val("");
-	   // document.getElementById("zc_name").value = "";
-
-
-	  //  $("#zc_pass").val("");
-	   // document.getElementById("zc_pass").value = "";
-
-	    
-	  //  $("#zc_dupPass").val("");
-	  //  document.getElementById("zc_dupPass").value = "";
 
 	  }
 	
@@ -162,7 +144,7 @@ publish
 
 <input type="hidden" value="111" name="picsInfor" id="picsInfor">
 
-<input type="hidden" value="" name="dlORzc" id="dlORzc">
+<input type="hidden" value="0" name="dlORzc" id="dlORzc">
 
 
 <table cellspacing="0" cellpadding="0" border="0" width="980px;">
@@ -283,6 +265,9 @@ publish
 </div>
 
 <div style="position:absolute;left:214px;">
+
+<c:if test="${userInfo==null}">
+
 <table border="0" width="220" cellpadding="0" style="border-collapse: collapse" height="22" id=secTable>
 <tr>
 <td class=sec21 onclick=secBoard(0) width="50%" style="cursor:pointer;">
@@ -360,7 +345,7 @@ publish
 
 </table>
 
-        
+</c:if>       
 
 <table >
        <tr>
@@ -378,5 +363,6 @@ publish
     </form>
     
 </div>    
+
 </body>
 </html>

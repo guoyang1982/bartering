@@ -80,26 +80,39 @@ public class PublishAction extends ActionSupport{
     	
     	Users user = null;
     	
-    	//设置成用户角色
-    	userVO.setRole_id(2);
+    	HttpSession session = org.apache.struts2.ServletActionContext.getRequest().getSession();
 
-    	if(dlORzc.equals("0")){
-    		//为登陆  查询此user
+    	if(session.getAttribute("userInfo")==null){
+    		//设置成用户角色
+    		userVO.setRole_id(2);
+
+    		if(dlORzc.equals("0")){
+    			//为登陆  查询此user
     		
-    		user = userService.getUser(userVO.getUser_nameD());
+    			user = userService.getUser(userVO.getUser_nameD(),userVO.getUser_passpowderD());
     		
-    	}else if(dlORzc.equals("1")){
-    		//为注册
+    		}else if(dlORzc.equals("1")){
+    			//为注册
     		
-    		user = publishService.saveUsers(userVO);
-    	}
+    			user = publishService.saveUsers(userVO);
+    		}
+    	
+    		if(user == null){
+    			//返回错误信息
+    		
+    		}
+    	
+    		//放到session里
+    		session.setAttribute("userInfo", user);
+    	 }else{
+    	
+    		 user = (Users)session.getAttribute("userInfo");
+    		
+    	 }
     	
     	//插入things表  	
     	publishService.saveThings(thingsVO,images,street,user.getId());
     	
-    	//放到session里
-    	HttpSession session = org.apache.struts2.ServletActionContext.getRequest().getSession();
-    	session.setAttribute("user", user);
 
 		return SUCCESS;
 	}

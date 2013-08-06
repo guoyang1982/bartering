@@ -8,4 +8,6 @@ public interface UsersDao {
 	
 	Users getUser(String user_name);
 	
+	Users getUser(String user_name,String user_pass);
+	
 }
