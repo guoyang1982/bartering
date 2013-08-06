@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import com.gy.barter.model.Citys;
 import com.gy.barter.model.Users;
 import com.gy.barter.service.PublishService;
+import com.gy.barter.service.UserService;
 import com.gy.barter.vo.ThingsVO;
 import com.gy.barter.vo.UserVO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -29,6 +30,9 @@ public class PublishAction extends ActionSupport{
 
     @Autowired
     private PublishService publishService;
+    
+    @Autowired
+    private UserService userService;
     
     private ThingsVO thingsVO;
     
@@ -73,16 +77,6 @@ public class PublishAction extends ActionSupport{
     
     public String toPublish() {
     	//message = " guoyang hellow";
-
-    	System.out.println(thingsVO.getHave());
-    	
-    	System.out.println(userVO.getUser_name());
-    	
-    	System.out.println(district);
-    	
-    	System.out.println(street);
-    	
-    	System.out.println(images);
     	
     	Users user = null;
     	
@@ -91,6 +85,8 @@ public class PublishAction extends ActionSupport{
 
     	if(dlORzc.equals("0")){
     		//为登陆  查询此user
+    		
+    		user = userService.getUser(userVO.getUser_nameD());
     		
     	}else if(dlORzc.equals("1")){
     		//为注册
@@ -101,11 +97,9 @@ public class PublishAction extends ActionSupport{
     	//插入things表  	
     	publishService.saveThings(thingsVO,images,street,user.getId());
     	
-
-    	
-
-
-
+    	//放到session里
+    	HttpSession session = org.apache.struts2.ServletActionContext.getRequest().getSession();
+    	session.setAttribute("user", user);
 
 		return SUCCESS;
 	}
