@@ -10,25 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2013-08-06 17:15:25
+Date: 2013-09-02 10:19:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `ad_type`
--- ----------------------------
-DROP TABLE IF EXISTS `ad_type`;
-CREATE TABLE `ad_type` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `priority` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk;
-
--- ----------------------------
--- Records of ad_type
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for `barter_city`
